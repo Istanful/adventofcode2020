@@ -8,3 +8,5 @@ Wish you all good luck!
 - [Day 1: Part 2 Solution](./day1/part_2_solution.rb)
 - [Day 2: Part 1 Solution](./day2/part_1_solution.rb)
 - [Day 2: Part 2 Solution](./day2/part_2_solution.rb)
+- [Day 3: Part 1 Solution](./day3/part_1_solution.rb)
+- [Day 3: Part 2 Solution](./day3/part_2_solution.rb)
