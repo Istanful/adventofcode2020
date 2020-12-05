@@ -2,33 +2,33 @@
 
 day = ARGV[0]
 puzzle_format = ARGV[1]
-usage = "Usage: bin/download-input <day> <format>"
+usage = "Usage: bin/prepare-day <day> (<format>)"
 
 return puts "No day given. #{usage}" if day.nil?
 
 `bin/download-instructions #{day}`
 `bin/download-input #{day} #{puzzle_format}`
 
-solution_part_1 = <<~RUBY
+part_1_solution = <<~RUBY
 require_relative 'PUZZLE_INPUT'
 
-def solution_part_1(input = PUZZLE_INPUT)
+def part_1_solution(input = PUZZLE_INPUT)
 end
 
-pp solution_part_1
+pp part_1_solution
 RUBY
 
-File.write("day#{day}/solution_part_1.rb", solution_part_1)
+File.write("day#{day}/part_1_solution.rb", part_1_solution)
 
-solution_part_2 = <<~RUBY
+part_2_solution = <<~RUBY
 require_relative 'PUZZLE_INPUT'
 
-def solution_part_2(input = PUZZLE_INPUT)
+def part_2_solution(input = PUZZLE_INPUT)
 end
 
-pp solution_part_2
+pp part_2_solution
 RUBY
 
-File.write("day#{day}/solution_part_2.rb", solution_part_2)
+File.write("day#{day}/part_2_solution.rb", part_2_solution)
 
 `open https://adventofcode.com/2020/day/#{day}`

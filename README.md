@@ -27,5 +27,5 @@ This will do a couple of things:
 
 - Download the instructions for day 5 into `day5/README.md`.
 - Download the puzzle input for day 5, and parse it into an array in `day5/puzzle_input.rb`.
-- Create `day5/solution_part_1.rb` and `day5/solution_part_2.rb`.
+- Create `day5/part_1_solution.rb` and `day5/part_2_solution.rb`.
 - Open the instructions for day 5 in the browser.
