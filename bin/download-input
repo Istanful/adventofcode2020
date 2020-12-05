@@ -1,0 +1,33 @@
+#!/usr/bin/env ruby
+
+parsers = {
+	array: ->(text) do
+		<<~RUBY
+    PUZZLE_INPUT = [
+      #{text.split("\n").map { |value| "\"#{value}\","}.join("\n  ")}
+    ]
+		RUBY
+	end
+}
+
+day = ARGV[0]
+format = ARGV[1]&.to_sym
+
+return puts "No day given." if day.nil?
+
+parser = parsers[format || :array]
+
+return puts "No parser for #{format}." if parser.nil?
+
+cookie = ENV["ADVENT_OF_CODE_COOKIE"]
+
+return puts "No cookie present. Please set the env variable `ADVENT_OF_CODE_COOKIE`" if cookie.nil?
+
+input = `curl https://adventofcode.com/2020/day/#{day}/input -b \"#{cookie}\"`
+path = "day#{day}/puzzle_input.rb"
+
+File.write(path, parser.call(input))
+
+puts "Input added to #{path}."
+
+
