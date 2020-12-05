@@ -12,3 +12,5 @@ Wish you all good luck!
 - [Day 3: Part 2 Solution](./day3/part_2_solution.rb)
 - [Day 4: Part 1 Solution](./day4/part_1_solution.rb)
 - [Day 4: Part 2 Solution](./day4/part_2_solution.rb)
+- [Day 5: Part 1 Solution](./day4/find_highest_seat_id.rb)
+- [Day 5: Part 2 Solution](./day4/find_missing_seat_id.rb)
