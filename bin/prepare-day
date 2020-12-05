@@ -1,0 +1,34 @@
+#!/usr/bin/env ruby
+
+day = ARGV[0]
+puzzle_format = ARGV[1]
+usage = "Usage: bin/download-input <day> <format>"
+
+return puts "No day given. #{usage}" if day.nil?
+
+`bin/download-instructions #{day}`
+`bin/download-input #{day} #{puzzle_format}`
+
+solution_part_1 = <<~RUBY
+require_relative 'PUZZLE_INPUT'
+
+def solution_part_1(input = PUZZLE_INPUT)
+end
+
+pp solution_part_1
+RUBY
+
+File.write("day#{day}/solution_part_1.rb", solution_part_1)
+
+solution_part_2 = <<~RUBY
+require_relative 'PUZZLE_INPUT'
+
+def solution_part_2(input = PUZZLE_INPUT)
+end
+
+pp solution_part_2
+RUBY
+
+File.write("day#{day}/solution_part_2.rb", solution_part_2)
+
+`open https://adventofcode.com/2020/day/#{day}`
