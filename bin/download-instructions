@@ -1,0 +1,61 @@
+#!/usr/bin/env ruby
+
+require 'nokogiri'
+require 'open-uri'
+
+usage = "Usage: bin/download-instructions <day>"
+day = ARGV[0]
+
+return puts "No day given. #{usage}" if day.nil?
+
+
+def render_node(node)
+	return node if node.is_a?(String)
+	return node.inject('') { |md, node| md + render_node(node) } if node.is_a?(Nokogiri::XML::NodeSet)
+
+	method(:"render_#{node.name.gsub(/<|>/, "")}").call(node)
+end
+
+def render_h2(node)
+	"## #{node.content.gsub('-', '')}\n\n"
+end
+
+def render_p(node)
+	"#{render_node(node.children)}\n\n"
+end
+
+def render_span(node)
+	render_node(node.child)
+end
+
+def render_a(node)
+	"[#{render_node(node.child)}](#{node.attr("href")})"
+end
+
+def render_em(node)
+	"*#{render_node(node.child)}*"
+end
+
+def render_text(node)
+	node.content
+end
+
+def render_ul(node)
+	node.children.reduce('') do |md, child|
+		md + render_node(child)
+	end + "\n"
+end
+
+def render_code(node)
+	"`#{render_node(node.children)}`"
+end
+
+def render_li(node)
+	"- #{render_node node.children}"
+end
+
+doc = Nokogiri::HTML(URI.open("https://adventofcode.com/2020/day/#{day}"))
+nodes = doc.css('.day-desc > *')
+readme_contents = render_node(nodes)
+
+File.write("day#{day}/README.md", readme_contents)
