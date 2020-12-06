@@ -5,6 +5,7 @@ require 'open-uri'
 
 usage = "Usage: bin/download-instructions <day>"
 day = ARGV[0]
+cookie = ENV["ADVENT_OF_CODE_COOKIE"]
 
 return puts "No day given. #{usage}" if day.nil?
 
@@ -59,10 +60,11 @@ def render_pre(node)
 	```
 	#{render_node node.children}
 	```
+
 	MARKDOWN
 end
 
-doc = Nokogiri::HTML(URI.open("https://adventofcode.com/2020/day/#{day}"))
+doc = Nokogiri::HTML(URI.open("https://adventofcode.com/2020/day/#{day}", "Cookie" => cookie))
 nodes = doc.css('.day-desc > *')
 readme_contents = render_node(nodes)
 
