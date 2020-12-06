@@ -1,8 +1,11 @@
 #!/usr/bin/env ruby
 
-day = ARGV[0]
-puzzle_format = ARGV[1]
-usage = "Usage: bin/prepare-day <day> (<format>)"
+require 'date'
+
+current_day = (Date.today - Date.parse('2020-11-30')).to_i
+puzzle_format = ARGV[0]
+day = ARGV[1] || current_day
+usage = "Usage: bin/prepare-day (<puzzle_format>) (<day>)"
 
 return puts "No day given. #{usage}" if day.nil?
 

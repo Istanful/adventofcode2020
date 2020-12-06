@@ -22,7 +22,7 @@ Wish you all good luck!
 Get cracking on a day:
 
 ```bash
-bin/prepare-day 5 array
+bin/prepare-day array 5
 ```
 
 This will do a couple of things:
