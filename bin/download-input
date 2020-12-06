@@ -8,6 +8,13 @@ parsers = {
       #{text.split("\n").map { |value| "\"#{value}\","}.join("\n  ")}
     ]
 		RUBY
+	end,
+	string: ->(text) do
+		<<~RUBY
+			PUZZLE_INPUT = <<~TEXT
+			#{text}
+			TEXT
+		RUBY
 	end
 }
 

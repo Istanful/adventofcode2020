@@ -54,6 +54,14 @@ def render_li(node)
 	"- #{render_node node.children}"
 end
 
+def render_pre(node)
+	<<~MARKDOWN
+	```
+	#{render_node node.children}
+	```
+	MARKDOWN
+end
+
 doc = Nokogiri::HTML(URI.open("https://adventofcode.com/2020/day/#{day}"))
 nodes = doc.css('.day-desc > *')
 readme_contents = render_node(nodes)
