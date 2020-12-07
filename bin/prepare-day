@@ -9,6 +9,8 @@ usage = "Usage: bin/prepare-day (<puzzle_format>) (<day>)"
 
 return puts "No day given. #{usage}" if day.nil?
 
+`mkdir day#{day}`
+
 `bin/download-instructions #{day}`
 `bin/download-input #{day} #{puzzle_format}`
 
