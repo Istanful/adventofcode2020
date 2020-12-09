@@ -18,7 +18,7 @@ def render_node(node)
 end
 
 def render_h2(node)
-	"## #{node.content.gsub('-', '')}\n\n"
+  "## #{node.content.gsub('-', '').chomp}\n\n"
 end
 
 def render_p(node)
