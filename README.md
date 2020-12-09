@@ -18,6 +18,10 @@ Wish you all good luck!
 - [Day 6: Part 2 Solution](./day6/part_2_solution.rb)
 - [Day 7: Part 1 Solution](./day7/part_1_solution.rb)
 - [Day 7: Part 2 Solution](./day7/part_2_solution.rb)
+- [Day 8: Part 1 Solution](./day8/part_1_solution.rb)
+- [Day 8: Part 2 Solution](./day8/part_2_solution.rb)
+- [Day 9: Part 1 Solution](./day9/part_1_solution.rb)
+- [Day 9: Part 2 Solution](./day9/part_2_solution.rb)
 
 ## Usage
 

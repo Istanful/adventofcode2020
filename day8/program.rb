@@ -13,4 +13,8 @@ class Program
     @current_index = new_index
     @accumulator = new_acc
   end
+
+  def completed?
+    @instructions[@current_index].nil?
+  end
 end
