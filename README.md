@@ -16,6 +16,8 @@ Wish you all good luck!
 - [Day 5: Part 2 Solution](./day5/find_missing_seat_id.rb)
 - [Day 6: Part 1 Solution](./day6/part_1_solution.rb)
 - [Day 6: Part 2 Solution](./day6/part_2_solution.rb)
+- [Day 7: Part 1 Solution](./day7/part_1_solution.rb)
+- [Day 7: Part 2 Solution](./day7/part_2_solution.rb)
 
 ## Usage
 
